@@ -36,12 +36,26 @@ public class Person {
         this.birthday = birthday;
     }
 
+    public Sex getGender() {
+        return gender;
+    }
 
+    public void setGender(Sex gender) {
+        this.gender = gender;
+    }
 
+    public String getEmailAddress() {
+        return emailAddress;
+    }
 
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
 
     public int getAge() {
-        // ...
+        LocalDate today = LocalDate.now();
+        return today.compareTo(this.birthday);
+
     }
 
     public void printPerson() {
