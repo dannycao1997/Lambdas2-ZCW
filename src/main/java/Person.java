@@ -69,7 +69,13 @@ public class Person {
         }
     }
 
-    interface CheckPerson {
-        boolean test(Person p);
+    
+    static class validateAge implements CheckPerson {
+        @Override
+        public boolean test(Person p) {
+            return p.gender == Sex.MALE &&
+                    p.getAge() >= 18 &&
+                    p.getAge() <= 25;
+        }
     }
-}
+ }
