@@ -1,6 +1,8 @@
 package main.java.rocks.zipcode.lambdas;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.List;
 
 public class Person {
 
@@ -54,13 +56,23 @@ public class Person {
 
     public int getAge() {
         LocalDate today = LocalDate.now();
-        return today.compareTo(this.birthday);
-
+        return Period.between(this.birthday, LocalDate.now()).getYears();
     }
 
     public void printPerson() {
-        System.out.println(name);
+        System.out.println("Name: " + name + " Birthday: " + birthday + " Gender: " + gender + " Email: " + emailAddress);
     }
 
+    interface CheckPerson {
+        boolean test(Person p);
+    }
+
+    public static void printPersonsOlderThan(List<Person> roster, int age) {
+        for (Person p : roster) {
+            if (p.getAge() >= age) {
+                p.printPerson();
+            }
+        }
+    }
 
 }
