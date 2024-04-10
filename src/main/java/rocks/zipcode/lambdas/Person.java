@@ -59,6 +59,8 @@ public class Person {
     }
 
     public void printPerson() {
-        // ...
+        System.out.println(name);
     }
+
+
 }
