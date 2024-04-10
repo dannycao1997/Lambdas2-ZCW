@@ -1,5 +1,3 @@
-package main.java.rocks.zipcode.lambdas;
-
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
@@ -63,10 +61,6 @@ public class Person {
         System.out.println("Name: " + name + " Birthday: " + birthday + " Gender: " + gender + " Email: " + emailAddress);
     }
 
-    interface CheckPerson {
-        boolean test(Person p);
-    }
-
     public static void printPersonsOlderThan(List<Person> roster, int age) {
         for (Person p : roster) {
             if (p.getAge() >= age) {
@@ -75,4 +69,7 @@ public class Person {
         }
     }
 
+    interface CheckPerson {
+        boolean test(Person p);
+    }
 }
